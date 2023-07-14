@@ -44,7 +44,7 @@ img {
   /* keeps the image within its container  */
 }
 
-/* Navbar Styling */
+/* Navbar*/
 .navbar {
   background-color: var(--primary-color);
   color: white;
@@ -61,7 +61,7 @@ img {
   margin: 0 5px;
 }
 
-.navbar a:hover {
+.navbar ul a:hover {
   border-bottom: 2px solid white;
 }
 
@@ -88,7 +88,7 @@ img {
 .showcase .grid {
   /* eliminates the scrollbar and overflows off div for effect (line 94) */
   overflow: visible;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 55% auto;
   gap: 30px;
 }
 
@@ -100,7 +100,7 @@ img {
   padding: 40px;
   /* always in front */
   z-index: 100;
-  /* justify-self: flex-end; */
+  justify-self: flex-end;
   /* @TODO */
 }
 
@@ -198,4 +198,51 @@ img {
 /* Footer */
 .footer .social a {
   margin: 0 10px;
+}
+
+/* Tablets and under */
+@media (max-width: 768px) {
+  .grid,
+  .showcase .grid,
+  .stats .grid,
+  .cli .grid,
+  .cloud .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .showcase {
+    height: auto;
+  }
+
+  .showcase-text {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .showcase-form {
+    justify-self: center;
+    margin: auto;
+  }
+
+  .cli .grid > *:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
